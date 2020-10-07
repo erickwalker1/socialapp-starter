@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Menu.css";
 import { withAsyncAction } from "../../redux/HOCs";
+import "./Menu.css";
 
 class Menu extends React.Component {
   handleLogout = event => {
@@ -15,6 +15,7 @@ class Menu extends React.Component {
         <h1>Kwitter</h1>
         {this.props.isAuthenticated && (
           <div id="menu-links">
+            <Link to = "/profile/:username">Profile</Link>
             <Link to="/messagefeed">Message Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
